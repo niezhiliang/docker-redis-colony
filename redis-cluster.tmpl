@@ -1,0 +1,10 @@
+port ${PORT}  #redis端口
+protected-mode no  #关闭保护，运行外网访问
+cluster-enabled yes   #开启cluster集群模式
+cluster-config-file nodes.conf #集群配置名
+cluster-node-timeout 5000 #超时时间
+cluster-announce-ip ${IP} #服务器内网ip
+cluster-announce-port ${PORT} #节点映射端口
+cluster-announce-bus-port 1${PORT} #节点总线端
+appendonly yes   #持久化模式
+
