@@ -2,6 +2,8 @@
 
 #集群文件防止目录
 redisdir="/home/redis-cluster"
+#redis镜像版本
+version="5.0.0"
 
 for port in `seq 7000 7005`; do \
   docker run -d -ti -p ${port}:${port} -p 1${port}:1${port} \
