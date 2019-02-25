@@ -140,7 +140,7 @@ cd docker-redis-colony
 
 ```
 
-- 后续启动集群脚本
+- 集群搭建成功后，`以后启动集群都只需启动startup脚本，签完不要手贱去执行initup.sh`
 
 ```shell
 
