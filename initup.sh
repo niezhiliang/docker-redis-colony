@@ -9,9 +9,10 @@ version="5.0.0"
 redisdir="/home/redis-cluster"
 
 #判断问加减是否存在 如果存在删除后创建，不存在创建
-if [ -f "${redisdir}"} ];then
-	rm -f -r ${redisdir}
-fi
+rm -f -r ${redisdir}
+# if [ -f "${redisdir}"} ];then
+# 	rm -f -r ${redisdir}
+# fi
 mkdir -p ${redisdir}
 
 echo "构建redis集群目录..."
