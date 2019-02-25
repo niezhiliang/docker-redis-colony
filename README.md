@@ -7,7 +7,6 @@
 
 ```
 docker pull redis:5.0.0
-
 ```
 
 ### 2.创建搭建集群所需的conf文件，这里暂时命名为`redis-cluster.tmpl`
@@ -46,6 +45,10 @@ done
 ```shell
 
 docker network create redis-net
+
+#查看docker所有的网桥
+
+docker network ls
 
 ```
 
