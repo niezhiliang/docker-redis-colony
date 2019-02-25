@@ -6,22 +6,22 @@
 ### 1.redis镜像下载，这里使用的是redis 5.0.0的版本
 
 ```
-  docker pull redis:5.0.0
+docker pull redis:5.0.0
 
 ```
 
 ### 2.创建搭建集群所需的conf文件，这里暂时命名为`redis-cluster.tmpl`
 
 ```shell
-	port ${PORT}   #redis端口
-	protected-mode no  #关闭保护模式，允许外网访问
-	cluster-enabled yes   # 开启集群模式 
-	cluster-config-file nodes.conf  #集群配置名
-	cluster-node-timeout 5000 #超时时间 
-	cluster-announce-ip ${IP}  #搭建集群主机的内网ip
-	cluster-announce-port ${PORT} #节点映射端口
-	cluster-announce-bus-port 1${PORT} #节点总线端
-	appendonly yes  #持久化模式
+port ${PORT}   #redis端口
+protected-mode no  #关闭保护模式，允许外网访问
+cluster-enabled yes   # 开启集群模式 
+cluster-config-file nodes.conf  #集群配置名
+cluster-node-timeout 5000 #超时时间 
+cluster-announce-ip ${IP}  #搭建集群主机的内网ip
+cluster-announce-port ${PORT} #节点映射端口
+cluster-announce-bus-port 1${PORT} #节点总线端
+appendonly yes  #持久化模式
 ```
 
 ### 3.创建集群和节点运行所需文件夹和文件
@@ -128,6 +128,20 @@ cd docker-redis-colony
 ./exe.sh
 
 //执行完后，会让我们输入yes or no   我们输入yes嘛输入完耐心等待吧，不出意外，最后几行命令是绿的就成功啦。绿绿更健康 哈哈😝
+
+```
+- redis集群关闭脚本
+```shell
+
+./shutup.sh 
+
+```
+
+- 后续启动集群脚本
+
+```shell
+
+./startup.sh
 
 ```
 
