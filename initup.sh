@@ -49,7 +49,7 @@ for port in `seq 7000 7005`; do \
   execsh=${execsh}`docker inspect redis-${port} | grep "IPAddress" | grep --color=auto -P '(\d{1,3}.){3}\d{1,3}' -o`:${port}' '
 done
 
-execsh=${execsh}“--cluster-replicas 1”
+execsh=${execsh}'--cluster-replicas 1'
 
 #将拼接好的命令打印到控制台
 echo ${execsh}
