@@ -17,7 +17,7 @@ protected-mode no  #关闭保护模式，允许外网访问
 cluster-enabled yes   # 开启集群模式 
 cluster-config-file nodes.conf  #集群配置名
 cluster-node-timeout 5000 #超时时间 
-cluster-announce-ip ${IP}  #搭建集群主机的内网ip
+cluster-announce-ip ${IP}  #搭建集群主机的外网ip
 cluster-announce-port ${PORT} #节点映射端口
 cluster-announce-bus-port 1${PORT} #节点总线端
 appendonly yes  #持久化模式
@@ -26,7 +26,7 @@ appendonly yes  #持久化模式
 ### 3.创建集群和节点运行所需文件夹和文件
 
 ```shell
-#这里是搭建集群的主机的内网ip
+#这里是搭建集群的主机的外网ip
 ip=xxx.xxx.xx.xx
 #集群文件目录
 redisdir="/home/redis-cluster"
@@ -114,7 +114,7 @@ docker rm redis-7002 -f
 
 ## 至此我们redis集群环境成功搭建完成，作为一个患有懒人综合征的来说，这么多步骤太烦太烦，就不能输入一两条命令就给我安装完嘛。 哈哈哈，为了偷懒，我把这些命令写成了一个脚本，只需要输入几条命令，就能搭建完成
 
-> 特别注意：`修改initup.sh中ip=xxxxx  将其改为你服务器的内网ip`
+> 特别注意：`修改initup.sh中ip=xxxxx  将其改为你服务器的外网ip，内网ip外网会连不上`
 
 - 拉取脚本项目
 
