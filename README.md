@@ -148,6 +148,8 @@ cd docker-redis-colony
 
 ```
 
+项目源码：https://github.com/niezhiliang/docker-redis-colony
+
 
 #### 集群安装gif
 
