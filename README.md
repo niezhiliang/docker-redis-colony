@@ -1,5 +1,9 @@
 # docker 环境下的redis cluster 集群搭建
 
+### 注意事项
+
+- 当某个master节点宕机以后，slave变为主节点需要几秒钟的时候，在这段时间，会报一个错误 `(error) CLUSTERDOWN The cluster is down`
+只要等一会再去连接就行了。
 
 
 
